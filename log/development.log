@@ -1180,3 +1180,107 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/tasks/2/edit" for ::1 at 2020-03-15 18:23:52 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/HayatoKoyama/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:21
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/edit.html.erb within layouts/application (207.3ms)
+Completed 200 OK in 483ms (Views: 444.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/tasks/2" for ::1 at 2020-03-15 18:23:59 +0900
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5xv7cmEP/UEVYWKDnnqqpTMbrT/UZ6EH06pUIeLT9uSbqdDPn4PZVRupb0JEDH5id7sZ4WlMD1cIBcNiXMRokg==", "task"=>{"title"=>"test2333"}, "commit"=>"更新する", "id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:27
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-15 18:23:59 +0900
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:3
+  Rendered tasks/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/tasks/2/toggle" for ::1 at 2020-03-15 18:24:01 +0900
+Processing by TasksController#toggle as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 0], ["updated_at", "2020-03-15 09:24:01.940433"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+Completed 204 No Content in 5ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/tasks/3/toggle" for ::1 at 2020-03-15 18:24:02 +0900
+Processing by TasksController#toggle as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[36mTask Update (0.3ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 0], ["updated_at", "2020-03-15 09:24:02.490456"], ["id", 3]]
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+Completed 204 No Content in 5ms (ActiveRecord: 1.7ms)
+
+
+Started POST "/tasks/4/toggle" for ::1 at 2020-03-15 18:24:04 +0900
+Processing by TasksController#toggle as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 0], ["updated_at", "2020-03-15 09:24:04.943119"], ["id", 4]]
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+Completed 204 No Content in 6ms (ActiveRecord: 2.0ms)
+
+
+Started POST "/tasks/5/toggle" for ::1 at 2020-03-15 18:24:06 +0900
+Processing by TasksController#toggle as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 0], ["updated_at", "2020-03-15 09:24:06.338172"], ["id", 5]]
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+Completed 204 No Content in 5ms (ActiveRecord: 2.4ms)
+
+
+Started POST "/tasks/6/toggle" for ::1 at 2020-03-15 18:24:07 +0900
+Processing by TasksController#toggle as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[36mTask Update (0.8ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 0], ["updated_at", "2020-03-15 09:24:07.825791"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:44
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:44
+Completed 204 No Content in 8ms (ActiveRecord: 3.9ms)
+
+

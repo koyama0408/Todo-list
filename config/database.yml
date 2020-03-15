@@ -21,5 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: my_database_todolist
+  pool: 5
+  timeout: 5000
+  encoding: unicode
+  #<<: *default
+  #url: <%= ENV['postgres://taorudxymuydjl:fbd51715db1114ecacd9530331f719b383ec7033aa5ea4c4e36c68106811ac3a@ec2-52-86-33-50.compute-1.amazonaws.com:5432/dco4kj4ue8848'] %>
+  #database: db/production.postgres
